@@ -1,0 +1,16 @@
+Unit 2 Freelancer Forum (Notes)
+
+1. Website = HTML, JS files
+
+2. Array containing list of freelancers (name, occupation, starting price)
+    name: Alice, occupation: Writer, starting price: $30;
+    name: Bob, occupation: Teacher, starting price: $50;
+
+3. Average starting price
+  Ex: Alice & Bob, avg: $40
+
+4. setInterval, a few secs later, repeats
+  name: Carol, occupation: Programmer, starting price: $70
+
+5. Average updated to $50
+
