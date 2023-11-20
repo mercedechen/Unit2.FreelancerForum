@@ -13,6 +13,10 @@ const freelancers = [
   {name: "Bob", occupation: "Teacher", price: 50},
 ];
 
+const newFreelancers = [
+  {name: "Carol", occupation: "Programmer", price: 70}
+]
+
 // Create an unordered list
 let ul = document.createElement("ul");
 document.body.append(ul);
@@ -24,10 +28,20 @@ const freelancersList = freelancers.map((freelancer) => {
   ul.appendChild(li);
 });
 
+// Calculate the starting average price of available freelancers
+function calculateAveragePrice(freelancers) {
+  let sum = 0;
+  for (let i = 0; i < freelancers.length; i++) {
+    sum = sum + freelancers[i].price;
+  }
+  let startingAveragePrice = sum / freelancers.length;
+  return startingAveragePrice;
+}
+
+const averagePrice = calculateAveragePrice(freelancers);
+console.log(averagePrice);
+
 // Create p tag
 let p = document.createElement("p");
-p.textContent = "The starting average price is: "
+p.textContent = `The starting average price is: ${averagePrice}`;
 document.body.append(p);
-
-// Calculate the starting average price of available freelancers
-
