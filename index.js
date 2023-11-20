@@ -40,6 +40,10 @@ let p = document.createElement("p");
 p.textContent = `The starting average price is: ${startingAveragePrice}`;
 document.body.append(p);
 
+const updateAveragePrice = document.querySelector("p")
+p = `The new average price is: `;
+document.body.append(p);
+
 // Add new available freelancers to unordered list
 function addFreelancers(newFreelancers) {
   newFreelancers.map((newFreelancer) => {
@@ -58,7 +62,7 @@ const addFreelancersInterval = setInterval(() => {
   ];
   addFreelancers(newFreelancers);
 
-//   if (freelancers.length >= 5) {
-//     clearInterval(addFreelancersInterval);
-//   };
-// }, 1000);
+  if (newFreelancers.length >= 5) {
+    clearInterval(addFreelancersInterval);
+  };
+}, 1000);
