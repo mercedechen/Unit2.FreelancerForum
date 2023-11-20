@@ -1,12 +1,26 @@
+// Adds h1 title to document using JavaScript
+const title = document.createElement('h1');
+title.textContent = "Freelancer Forum";
+document.body.appendChild(title);
+
+// Adds h2 title to document using JavaScript
+const section = document.createElement('h2');
+section.textContent = "Available Freelancers";
+document.body.appendChild(section);
+
 const freelancers = [
   {name: "Alice", occupation: "Writer", price: 30},
   {name: "Bob", occupation: "Teacher", price: 50},
-  {name: "Carol", occupation: "Programmer", price: 70},
-  {name: "Emily", occupation: "Artist", price: 100},
-  {name: "Rebecca", occupation: "Graphic Designer", price: 75},
-  {name: "George", occupation: "Teacher", price: 40},
-  {name: "Kim", occupation: "Reporter", price: 35},
-  {name: "Aaron", occupation: "Software Developer", price: 100}
 ];
 
-console.log(freelancers);
+const otherFreelancers = [
+  {name: "Carol", occupation: "Programmer", price: 70}
+  {name: "Ruby", occupation: "Graphic Designer", price: 100}
+]
+
+const ul = document.querySelector(#freelancersList);
+
+
+
+
+
