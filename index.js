@@ -14,14 +14,16 @@ const freelancers = [
 ];
 
 const newFreelancers = [
-  {name: "Carol", occupation: "Programmer", price: 70}
+  {name: "Carol", occupation: "Programmer", price: 70},
+  {name: "Emily", occupation: "Reporter", price: 45},
+  {name: "Alan", occupation: "Developer", price: 100}
 ]
 
 // Create an unordered list
 let ul = document.createElement("ul");
 document.body.append(ul);
 
-// Add list items to unordered list
+// Add available freelancers to unordered list
 const freelancersList = freelancers.map((freelancer) => {
   const li = document.createElement("li");
   li.textContent = `Name: ${freelancer.name}, Occupation: ${freelancer.occupation}, Price: ${freelancer.price}`;
@@ -38,10 +40,21 @@ function calculateAveragePrice(freelancers) {
   return startingAveragePrice;
 }
 
-const averagePrice = calculateAveragePrice(freelancers);
-console.log(averagePrice);
+startingAveragePrice = calculateAveragePrice(freelancers);
+// console.log(startingAveragePrice);
 
 // Create p tag
 let p = document.createElement("p");
-p.textContent = `The starting average price is: ${averagePrice}`;
+p.textContent = `The starting average price is: ${startingAveragePrice}`;
 document.body.append(p);
+
+// Add new available freelancers to unordered list
+// setInterval();
+function addFreelancers() {
+  const newFreelancersList = newFreelancers.map((newFreelancer) => {
+    const li = document.createElement("li");
+    li.textContent = `Name: ${newFreelancer.name}, Occupation: ${newFreelancer.occupation}, Price: ${newFreelancer.price}`;
+    ul.appendChild(li);
+  });
+};
+addFreelancers(newFreelancers);
