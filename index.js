@@ -1,68 +1,48 @@
-// Create headings
-const h1 = document.createElement("h1");
-h1.textContent = "Freelancer Forum";
-document.body.append(h1);
-
-const h2 = document.createElement("h2");
-h2.textContent = "Available Freelancers";
-document.body.append(h2);
-
-// Create array containing available freelancers
+// Contain initial available freelancers
 const freelancers = [
   {name: "Alice", occupation: "Writer", price: 30},
-  {name: "Bob", occupation: "Teacher", price: 50},
+  {name: "Bob", occupation: "Teacher", price: 50}
 ];
 
-// Create an unordered list
-let ul = document.createElement("ul");
-document.body.append(ul);
+const newFreelancers = [
+  {name: "Carol", occupation: "Writer", price: 70}
+]
 
-// Create an unordered list and add initial available freelancers
-const freelancersList = freelancers.map((freelancer) => {
+const addFreelancers = [...freelancers, ...newFreelancers];
+
+// Display list of available freelancers and targets the first unordered list
+const ul = document.querySelector("ul");
+
+let freelancersList = freelancers.map((freelancer) => {
   const li = document.createElement("li");
   li.textContent = `Name: ${freelancer.name}, Occupation: ${freelancer.occupation}, Price: ${freelancer.price}`;
-  ul.appendChild(li);
+  ul.append(li);
 });
 
 // Calculate the starting average price of available freelancers
-function calculateAveragePrice(freelancers) {
+function calculateAvgPrice(freelancers) {
   let sum = 0;
   for (let i = 0; i < freelancers.length; i++) {
-    sum = sum + freelancers[i].price;
+    sum += freelancers[i].price;
   }
-  let startingAveragePrice = sum / freelancers.length;
-  return startingAveragePrice;
-}
-startingAveragePrice = calculateAveragePrice(freelancers);
-
-// Display the starting average price on HTML
-let p = document.createElement("p");
-p.textContent = `The starting average price is: ${startingAveragePrice}`;
-document.body.append(p);
-
-const updateAveragePrice = document.querySelector("p")
-p = `The new average price is: `;
-document.body.append(p);
-
-// Add new available freelancers to unordered list
-function addFreelancers(newFreelancers) {
-  newFreelancers.map((newFreelancer) => {
-    const li = document.createElement("li");
-    li.textContent = `Name: ${newFreelancer.name}, Occupation: ${newFreelancer.occupation}, Price: ${newFreelancer.price}`;
-    ul.appendChild(li);
-  });
+  return sum / freelancers.length;
 };
-// addFreelancers(newFreelancers);
 
-// Add new available freelancers at a set interval
-const addFreelancersInterval = setInterval(() => {
-  const newFreelancers = [
-    {name: "Carol", occupation: "Programmer", price: 70},
-    {name: "Dave", occupation: "Reporter", price: 45}
-  ];
-  addFreelancers(newFreelancers);
+// Display starting average price
+function renderAvgPrice() {
+  document.getElementById("initialAvgPrice").innerHTML = `Average Starting Price: ${calculateAvgPrice(freelancers)}`
+}
+renderAvgPrice();
 
-  if (newFreelancers.length >= 5) {
-    clearInterval(addFreelancersInterval);
-  };
-}, 1000);
+// Add new freelancers to the list
+freelancersList = addFreelancers.map((freelancer) => {
+  const li = document.createElement("li");
+  li.textContent = `Name: ${freelancer.name}, Occupation: ${freelancer.occupation}, Price: ${freelancer.price}`;
+  update.appendChild(li);
+});
+
+// Calculate new average price
+function newAvgPrice() {
+  document.getElementById("newAvgPrice").innerHTML = `New Average Price: ${calculateAvgPrice(addFreelancers)}`
+}
+newAvgPrice();
