@@ -8,26 +8,34 @@ A few seconds later, a new listing appears for a freelancer named Carol, who is 
 
 New freelancers continue to appear every few seconds, and the average starting price is updated accordingly.
 
-## Notes and Approach
+## Planning
 
-1. Create h1 tag: Freelancer Forum, h2 tag: Available Freelancers and p tag: Average Starting Price
+1. Create h1 tag for "Freelancer Forum"
 
-2. Create an array containing the list of freelancers.
-Example:
-  {name: "Alice", occupation: "Writer", price: 30},
-  {name: "Bob", occupation: "Teacher", price: 50}
+2. Create p tag for "Starting Average Price"
 
-3. Create an unordered list of the available freelancers.
+3. Create ul tag, use querySelector(); to contain list of freelancers
 
-4. Calculate the starting average price of the freelancers.
+4. Create an array containing the initial list of avaialble freelancers
+* {name: "Alice", occupation: "Writer", price: 30},
+* {name: "Bob", occupation: "Teacher", price: 50}
 
-5. Using setinterval, add another freelancer {name: "Carol", occupation: "Programmer", price: 70}
+5. Create a function to calculate the starting average price of the initial available freelancers and return the results using render();
 
-6. Update average price
+6. Using setinterval();, add another freelancer
+* {name: "Carol", occupation: "Programmer", price: 70}
 
-7. Using setInterval(), add additional freelancers at a specified interval and render() every few seconds to the unordered list.
+7. Use render(); to update the average price of available freelancers
 
-8. Update the average starting price.
+8. Using setInterval();, add additional random freelancers at a specified interval and render() every few seconds to the unordered list.
 
+9. Use render(); to update the average price of all freelancers
+
+## Notes
+
+* render(); is responsible for rendering the calculated average price in the HTML document.
+
+* When using setInterval();, always pass a function reference as its first argument so that the function is executed at each interval.
+* setTime(); takes a time parameter, clearInterval() will stop setInterval(); immediately.
 
 
