@@ -21,7 +21,7 @@ Example:
 
 4. Calculate the starting average price of the freelancers.
 
-5. Add another freelancer {name: "Carol", occupation: "Programmer", price: 70}
+5. Using setinterval, add another freelancer {name: "Carol", occupation: "Programmer", price: 70}
 
 6. Update average price
 

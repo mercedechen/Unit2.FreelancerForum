@@ -5,17 +5,16 @@ const freelancers = [
 ];
 
 const newFreelancers = [
-  {name: "Carol", occupation: "Writer", price: 70}
-]
-
-const addFreelancers = [...freelancers, ...newFreelancers];
+  {name: "Carol", occupation: "Programmer", price: 70},
+  {name: "Emily", occupation: "Designer", price: 100}
+];
 
 // Display list of available freelancers and targets the first unordered list
 const ul = document.querySelector("ul");
 
 let freelancersList = freelancers.map((freelancer) => {
   const li = document.createElement("li");
-  li.textContent = `Name: ${freelancer.name}, Occupation: ${freelancer.occupation}, Price: ${freelancer.price}`;
+  li.textContent = `name: ${freelancer.name}, occupation: ${freelancer.occupation}, price: ${freelancer.price}`;
   ul.append(li);
 });
 
@@ -34,15 +33,23 @@ function renderAvgPrice() {
 }
 renderAvgPrice();
 
-// Add new freelancers to the list
-freelancersList = addFreelancers.map((freelancer) => {
-  const li = document.createElement("li");
-  li.textContent = `Name: ${freelancer.name}, Occupation: ${freelancer.occupation}, Price: ${freelancer.price}`;
-  update.appendChild(li);
-});
-
-// Calculate new average price
-function newAvgPrice() {
-  document.getElementById("newAvgPrice").innerHTML = `New Average Price: ${calculateAvgPrice(addFreelancers)}`
+// Use setInterval() to add new freelancers to the list
+function addFreelancer(newFreelancers) {
+  newFreelancers.forEach((newFreelancer) => {
+    const li = document.createElement("li");
+    li.textContent = `name: ${newFreelancer.name}, occupation: ${newFreelancer.occupation}, price: ${newFreelancer.price}`;
+    ul.appendChild(li);
+  });
 }
-newAvgPrice();
+addFreelancer(newFreelancers);
+
+function updateAvgPrice() {
+  let updateSum = calculateAvgPrice(freelancers);
+  updateSum += calculateAvgPrice(newFreelancers);
+  return updateSum / newFreelancers.length;
+};
+
+function renderNewAvgPrice() {
+  document.getElementById("updateAvgPrice").innerHTML = `Updated Average Price: ${updateAvgPrice(newFreelancers)}`;
+}
+renderNewAvgPrice();
