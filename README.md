@@ -22,19 +22,19 @@ New freelancers continue to appear every few seconds, and the average starting p
 
 5. Create a function to calculate the starting average price of the initial available freelancers and return the results using render();
 
-6. Using setinterval();, add another freelancer
+6. Add another freelancer using setInterval()
 * {name: "Carol", occupation: "Programmer", price: 70}
 
-7. Use render(); to update the average price of available freelancers
+7. Use render() to update the average price of available freelancers
 
-8. Using setInterval();, add additional random freelancers at a specified interval and render() every few seconds to the unordered list.
+8. Add additional random freelancers using setInterval() and render() every few seconds to the unordered list.
 
-9. Use render(); to update the average price of all freelancers
+9. Use render() to update the total average price of all freelancers
 
 ## Notes
 
-* When using setInterval();, always pass a function reference as its first argument so that the function is executed at each interval.
+* When using setInterval() always pass a function reference as its first argument so that the function is executed at each interval.
 
-* setTime(); takes a time parameter, clearInterval() will stop setInterval(); immediately.
+* setTime() takes a time parameter, clearInterval() will stop setInterval() immediately.
 
 
