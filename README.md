@@ -33,9 +33,8 @@ New freelancers continue to appear every few seconds, and the average starting p
 
 ## Notes
 
-* render(); is responsible for rendering the calculated average price in the HTML document.
-
 * When using setInterval();, always pass a function reference as its first argument so that the function is executed at each interval.
+
 * setTime(); takes a time parameter, clearInterval() will stop setInterval(); immediately.
 
 
